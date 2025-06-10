@@ -14,12 +14,8 @@ namespace PaternDesign.API.Application.Handlers
 
         public Task Handle(ProductCreatedEvent notification, CancellationToken cancellationToken)
         {
-            // Aquí puedes agregar cualquier acción que desees realizar
-            _logger.LogInformation($"Producto creado: {notification.Product.ProductName} - {notification.Product.ProductPrice}");
-
-            // Aquí podrías agregar más lógica: enviar correos, enviar notificaciones, etc.
-
-            return Task.CompletedTask;
+           _logger.LogInformation($"Producto creado: {notification.Product.ProductName} - {notification.Product.ProductPrice}");
+           return Task.CompletedTask;
         }
     }
 }
