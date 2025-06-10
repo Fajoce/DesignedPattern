@@ -7,9 +7,11 @@ namespace PaternDesign.API.Domain.Entities
     {
         [Key]
         public int ProductId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
+        [MinLength(5)]        
         public string ProductName { get; set; } = string.Empty;
-        public string ProductDescription { get; set; } = string.Empty;
+        public string? ProductDescription { get; set; } = string.Empty;
+        [Required]
         public decimal ProductPrice { get; set; }
 
         private readonly List<IDomainEvent> _domainEvents = new();
