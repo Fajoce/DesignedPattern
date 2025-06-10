@@ -7,6 +7,7 @@ namespace PaternDesign.API.Domain.Entities
     {
         [Key]
         public int ProductId { get; set; }
+        [Required]
         public string ProductName { get; set; } = string.Empty;
         public string ProductDescription { get; set; } = string.Empty;
         public decimal ProductPrice { get; set; }
