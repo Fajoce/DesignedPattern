@@ -11,7 +11,8 @@ namespace PaternDesign.API.Domain.Entities
         [MinLength(5)]        
         public string ProductName { get; set; } = string.Empty;
         public string? ProductDescription { get; set; } = string.Empty;
-        [Required]
+        [Required(ErrorMessage = "The value must be greater tnan 0")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "El precio debe ser mayor que 0")]
         public decimal ProductPrice { get; set; }
 
         private readonly List<IDomainEvent> _domainEvents = new();
