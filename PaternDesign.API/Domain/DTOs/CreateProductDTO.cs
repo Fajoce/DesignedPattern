@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace PaternDesign.API.Domain.DTOs
 {
@@ -6,8 +7,9 @@ namespace PaternDesign.API.Domain.DTOs
     {
         [JsonIgnore]
         public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public string ProductDescription { get; set; }
+        [Required]
+        public string ProductName { get; set; } = string.Empty;
+        public string? ProductDescription { get; set; }
         public decimal ProductPrice { get; set; } = 0;
     }
 }
